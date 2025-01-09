@@ -1,5 +1,5 @@
 
-# README: 3D Third-Person Fighter Game
+# Ai Combat
 
 ## Game Overview
 
@@ -110,7 +110,7 @@ The AI learns on-site, adapting dynamically to player inputs and behaviors.
 #### Scenario
 
 - **Initial Observation**:
-  - IMAGE HERE
+  - ![Initial Observation](./media/test-1a.png)
   - This figure was taken at the beginning of the game. On the left, we can see the values being logged:
     - **State Values [4]**: Represent Q-values for actions in State 4 (Player near AI). The values are:
       - **(6)**: Retreat with a Q-value of 6.
@@ -123,7 +123,7 @@ The AI learns on-site, adapting dynamically to player inputs and behaviors.
     - **AI Action Chosen (1)**: Confirms the AI selected Punch based on the highest Q-value.
 
 - **Outcome**:
-  - IMAGE HERE
+  - ![Outcome](./media/test-1b.png)
   - After reducing the AI player's HP, we transition to State 5. The logged Q-values now indicate a much higher value for Action 6 (Retreat), implying that the AI is correctly choosing to retreat when its health is low.
 
 ### Test Case 2: The AI should try to attack the player as much as it can if its health is not low.
@@ -131,7 +131,7 @@ The AI learns on-site, adapting dynamically to player inputs and behaviors.
 #### Scenario
 
 - **Observation**:
-  - IMAGE HERE
+  - ![Observation](./media/test-2.png)
   - We can see that when the Player is near the AI (State 4), it favors attacking represented by the high Q (> 500) value in Action 1.
 
 ### Test Case 3: If the AI is attacked and its health is not low it should attack the player if they are near.
@@ -139,10 +139,10 @@ The AI learns on-site, adapting dynamically to player inputs and behaviors.
 #### Scenario
 
 - **Observation**:
-  - IMAGE HERE
+  - ![Observation](./media/test-3.png)
   - Above we can see that the AI has taken some damage and that the Player is near the AI (represented by State 4). It favors punching the Player (Action 1), as indicated by the Q-values.
 - **Outcome**:
-  - IMAGE HERE
+  - ![Outcome](./media/test-3.png)
   - Based on all these cases it's evident that the AI is behaving as expected.
 
 ---
@@ -158,6 +158,7 @@ In summary, the limitations of our AI in the game include:
 - A simplified state representation that only distinguishes between "close" and "not close," leading to potential misunderstandings of the game environment.
 - A limited understanding of rewards can cause confusion when faced with unexpected outcomes or situations.
 - Experienced players may be able to "break" the AI by exploiting these limitations, using strategies that take advantage of the AI's inability to fully comprehend the game's state and adapt to changing circumstances.
+
 
 ---
 
